@@ -2,18 +2,48 @@ body {
   text-align: center;
 }
 
-ul {
+header, main {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*Header*/
+
+header nav > ul > li {
+  display: inline;
+}
+
+header nav > ul > li a {
+  padding: 15px;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+header nav > ul > li a:hover {
+  background: #ffc000;
+}
+
+header nav > ul > li a:before {
+  content:'\2630';
+}
+
+/*Main*/
+
+.grid {
   margin: 0 auto;
   width: 300px;
   height: 300px;
-  overflow: hidden; /*good practice as the child elements have been floated, stops the ul from breaking document flow as well*/
+  overflow: hidden;
   border: 1px solid #000;
 }
 
-li {
+.gridsquare {
   width: 98px;
   height: 98px;
   float: left;
   border: 1px solid #000;
-  line-height: 98px; /*Means content in the li will now be centered vertically*/
-}
+  line-height: 98px;
+
+
