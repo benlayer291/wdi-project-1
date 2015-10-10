@@ -33,17 +33,17 @@ header nav > ul > li a:before {
 
 .grid {
   margin: 0 auto;
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   overflow: hidden;
   border: 1px solid #000;
 }
 
 .gridsquare {
-  width: 98px;
-  height: 98px;
+  width: 148px;
+  height: 148px;
   float: left;
   border: 1px solid #000;
-  line-height: 98px;
-
+  line-height: 148px;
+}
 

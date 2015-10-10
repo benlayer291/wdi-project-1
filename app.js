@@ -1,6 +1,15 @@
-//Need to generate a grid, of variable size, to play the maze game on
+$(function() {
+  console.log("working");
+  generateGrid(width);
+  console.log(grid);
+  generateRandomPath(width);
+  console.log(randomPath);
+  getUserMove();
+})
+
+//Need to generate a grid, of any size, to play the maze game on
 var grid  = [];
-var width = 5;
+var width = 3;
 
 function generateGrid(width) {
   var size = Math.pow(width,2); 
@@ -16,7 +25,7 @@ function generateGrid(width) {
   return grid;
 }
 
-//Need to generate a random path across the grid, starting in the north-west corner
+//Need to generate a random path across a grid of any size, starting in the north-west corner
 //and finishing in the south-east corner of the grid
 
 var randomPath = [];
@@ -53,9 +62,49 @@ function generateRandomPath(width) {
       j++;
       k++;
     } 
-    // randomPath[k] = grid[i][j];
   }
   return randomPath; 
 }
 
+//Need to write up function to set up the grid on the screen
+//The grid should load dynamically when difficulty level button is pressed
+//Grid should always be of the same total size but contain varying number of grid squares.
 
+//Need to put grid square the user chooses into an array
+//This array can be compared with the randomPath array to see if a correct square
+//has been chosen
+
+var userMoves = [0];
+
+function getUserMove() {
+  $('.gridsquare').on("click", playGame); 
+}
+
+// Need to compare user move to random path array to see if move is correct
+
+function playGame() {
+
+  var $squareChosen = $(this);
+  var $squareChosenId = $squareChosen.attr('id');
+  userMoves.push($squareChosenId);
+  console.log(userMoves);
+
+  if ( userMoves[userMoves.length-1] == randomPath[userMoves.length-1] && userMoves[userMoves.length-1] == grid[width-1][width-1]) {
+    $squareChosen.css('background', 'green');
+    console.log("winner");
+  }
+
+  else if (userMoves[userMoves.length-1] == randomPath[userMoves.length-1]) {
+    $squareChosen.css('background', 'green');
+  }
+  else {
+    $squareChosen.css('background', 'red');
+    userMoves = [0];
+    console.log(userMoves);
+    setTimeout(function() {
+      $squareChosen.css('background', 'white');
+    }, 1000);
+  }
+  
+
+}
