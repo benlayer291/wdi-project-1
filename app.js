@@ -3,7 +3,6 @@ $(function() {
   generateGrid(width);
   console.log(grid);
   generateRandomPath(width);
-  console.log(randomPath);
   getUserMove();
 })
 
@@ -92,19 +91,24 @@ function playGame() {
   if ( userMoves[userMoves.length-1] == randomPath[userMoves.length-1] && userMoves[userMoves.length-1] == grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
     console.log("winner");
-  }
-
-  else if (userMoves[userMoves.length-1] == randomPath[userMoves.length-1]) {
+    userMoves = [0];
+    setTimeout(function() {
+      $('li').css('background', 'white');
+      $('#0').css('background', 'green');
+    }, 1000);
+    generateRandomPath(width);
+    console.log(randomPath);
+  } else if (userMoves[userMoves.length-1] == randomPath[userMoves.length-1]) {
     $squareChosen.css('background', 'green');
-  }
-  else {
+  } else {
     $squareChosen.css('background', 'red');
     userMoves = [0];
     console.log(userMoves);
     setTimeout(function() {
-      $squareChosen.css('background', 'white');
+      $('li').css('background', 'white');
+      $('#0').css('background', 'green');
     }, 1000);
   }
-  
+
 
 }
