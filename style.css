@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+}
+
+ul {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  overflow: hidden; /*good practice as the child elements have been floated, stops the ul from breaking document flow as well*/
+  border: 1px solid #000;
+}
+
+li {
+  width: 98px;
+  height: 98px;
+  float: left;
+  border: 1px solid #000;
+  line-height: 98px; /*Means content in the li will now be centered vertically*/
+}
