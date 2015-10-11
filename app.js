@@ -77,7 +77,8 @@ var userMoves = [0];
 var userLives = 3;
 
 function setUp() {
-  $('.gridsquare').on("click", playGame); 
+  $('.gridsquare').on("click", playGame);
+  $('#reset').on("click", resetLives); 
   $('#reset').on("click", resetGrid);
   $('#hint').on("click", getHint);
 }
@@ -95,15 +96,28 @@ function playGame() {
     $squareChosen.css('background', 'green');
     console.log("winner");
     setTimeout(resetGrid, 1000);
+    resetLives();
     generateRandomPath(width);
 
-  } else if (userMoves[userMoves.length-1] == randomPath[userMoves.length-1]) {
+  } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
     $squareChosen.css('background', 'green');
 
   } else {
     $squareChosen.css('background', 'red');
-    setTimeout(resetGrid, 1000);
+    userLives--;
 
+    if (userLives === 0) {
+      for (var i=0; i <grid.length; i++) {
+        for(var j=0; j<grid.length; j++) {
+        $('#'+grid[i][j]).css('background', 'red');
+        }
+      }
+      console.log("Loser");
+      setTimeout(resetGrid, 3000);
+      resetLives();
+      generateRandomPath(width);
+    }
+    setTimeout(resetGrid, 500);
   }
 }
 
@@ -113,12 +127,20 @@ function resetGrid() {
   userMoves = [0];
   $('li').css('background', 'white');
   $('#0').css('background', 'green');
+  console.log(userLives);
+}
+
+//Need a function to reset lives
+
+function resetLives() {
+  return userLives = 3;
+  console.log(userLives);
 }
 
 //Need a function that displays the path, a "hint" when user is stuck
 
 function getHint() {
- for (var i=0; i<randomPath.length; i++) {
+  for (var i=0; i<randomPath.length; i++) {
   $('#'+randomPath[i]).css('background', 'green');
   setTimeout(resetGrid, 500);
  }
