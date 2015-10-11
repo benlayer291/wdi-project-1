@@ -101,7 +101,7 @@ function playGame() {
     $('#score').text("Score: " + userScore)
     setTimeout(resetGrid, 1000);
 
-    if (userLives < 3) {
+    if (userLives < 3 && userScore === 5) {
     userLives++;
     }
 
