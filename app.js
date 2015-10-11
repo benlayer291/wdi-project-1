@@ -3,7 +3,7 @@ $(function() {
   generateGrid(width);
   console.log(grid);
   generateRandomPath(width);
-  getUserMove();
+  setUp();
 })
 
 //Need to generate a grid, of any size, to play the maze game on
@@ -74,9 +74,12 @@ function generateRandomPath(width) {
 //has been chosen
 
 var userMoves = [0];
+var userLives = 3;
 
-function getUserMove() {
+function setUp() {
   $('.gridsquare').on("click", playGame); 
+  $('#reset').on("click", resetGrid);
+  $('#hint').on("click", getHint);
 }
 
 // Need to compare user move to random path array to see if move is correct
@@ -100,7 +103,7 @@ function playGame() {
   } else {
     $squareChosen.css('background', 'red');
     setTimeout(resetGrid, 1000);
-    
+
   }
 }
 
@@ -110,4 +113,13 @@ function resetGrid() {
   userMoves = [0];
   $('li').css('background', 'white');
   $('#0').css('background', 'green');
+}
+
+//Need a function that displays the path, a "hint" when user is stuck
+
+function getHint() {
+ for (var i=0; i<randomPath.length; i++) {
+  $('#'+randomPath[i]).css('background', 'green');
+  setTimeout(resetGrid, 500);
+ }
 }
