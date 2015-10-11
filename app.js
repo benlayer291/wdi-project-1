@@ -186,13 +186,12 @@ function getHint() {
 function generateGridAndPath() {
   $('.grid').empty();
   width = $(this).val();
-  // var $gridsquare = $('<li></li>');
 
   for (var i=0; i < Math.pow(width,2); i++) {
     var $gridsquare = $('<li></li>').addClass("gridsquare"+width);
     $('.grid').append($gridsquare.attr("id", i));
   }
-
+  $('#0').html('<div class="cursor'+width+'"></div>');
   generateGrid(width);
   generateRandomPath(width);
   $('.gridsquare'+width).on("click", playGame);
@@ -205,7 +204,7 @@ function keyMoves() {
 
   function moveRight() {
     $('#cursor').addClass('moveRight');
-    
+
   }
 
   function moveDown() {

@@ -72,12 +72,6 @@ header nav > ul > li a:before {
   position: relative;
 }
 
-/*.person {
-  height: 100px;
-  width: 100px;
-  background: pink;
-}*/
-
 .cursor3 {
   width: 111px;
   height: 111px;
@@ -86,6 +80,42 @@ header nav > ul > li a:before {
   position: absolute;
   top: 17.5px;
   left: 17.5px;
+  transform: translate(0, 0);
+  transition: transform 500ms;
+}
+
+.cursor4 {
+  width: 82px;
+  height: 82px;
+  border-radius: 100%;
+  background:pink;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  transform: translate(0, 0);
+  transition: transform 500ms;
+}
+
+.cursor5 {
+  width: 66px;
+  height: 66px;
+  border-radius: 100%;
+  background:pink;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  transform: translate(0, 0);
+  transition: transform 500ms;
+}
+
+.cursor6 {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  background:pink;
+  position: absolute;
+  top: 9px;
+  left: 9px;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
