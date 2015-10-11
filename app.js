@@ -171,6 +171,7 @@ function getHint() {
 //Need to be able to dynamically create grids of different sizes on the page
 
 function generateGridAndPath() {
+  $('.grid').empty();
   width = $(this).val();
   var $gridsquare = $('<li></li>');
 
