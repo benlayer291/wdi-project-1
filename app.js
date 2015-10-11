@@ -111,19 +111,21 @@ function playGame() {
   } else {
     $squareChosen.css('background', 'red');
     userLives--;
-    // $('#lives').text("Lives: " + userLives);
-
+    $('#lives').text("Lives: " + userLives);
     if (userLives === 0) {
+
       for (var i=0; i <grid.length; i++) {
         for(var j=0; j<grid.length; j++) {
         $('#'+grid[i][j]).css('background', 'red');
         }
       }
+
       console.log("Loser");
-      setTimeout(resetGrid, 3000);
-      setTimeout(resetLives, 500);
-      generateRandomPath(width);
+      setTimeout(reset, 2000);
+      return generateRandomPath(width);
+
     }
+
     setTimeout(resetGrid, 500);
   }
   $('#lives').text("Lives: " + userLives);
