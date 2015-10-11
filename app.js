@@ -4,7 +4,7 @@ $(function() {
   width=3;
   generateGrid(width);
   generateRandomPath(width);
-  $('.gridsquare'+width).on("click", playGame);
+  $(document).on("keyup", playGame);
 })
 
 //Need to generate a grid, of any size, to play the maze game on
@@ -75,6 +75,7 @@ function generateRandomPath(width) {
 //has been chosen
 
 var userMoves = [0];
+var id=0;
 var userLives = 3;
 var userScore = 0;
 
@@ -87,14 +88,36 @@ function setUp() {
 // Need to compare user move to random path array to see if move is correct
 
 function playGame() {
-console.log("clicked");
-  var $squareChosen = $(this);
-  var $squareChosenId = parseInt($squareChosen.attr('id'));
-  userMoves.push($squareChosenId);
-  console.log(userMoves);
+console.log("keyed");
+console.log(width);
+  var keypressed = event.which;
+  if(id < (Math.pow(width,2)-1) && keypressed === 39) {
+    id+=1;
+    console.log(id);
+    userMoves.push(id);
+    $('.cursor'+width).animate({left: "+="+((450/width)-2)+"px"}, 'fast');
+    console.log(userMoves);
+    checkWin();
+  } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
+    id+=width;
+    console.log(id);
+    userMoves.push(id);
+    $('.cursor'+width).animate({top: "+="+((450/width)-2)+"px"}, 'fast');
+    console.log(userMoves);
+    checkWin();
+  }
 
+  // var $squareChosen = $(event.which);
+  // console.log($squareChosen);
+  // var $squareChosenId = parseInt($squareChosen.attr('id'));
+  // userMoves.push($squareChosenId);
+}
+
+
+
+function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
-    $squareChosen.css('background', 'green');
+    $('#'+id).css('background', 'green');
     userScore++;
     $('#score').text("Score: " + userScore);
     for (var i=0; i <grid.length; i++) {
@@ -103,6 +126,7 @@ console.log("clicked");
       }
     }
     setTimeout(resetGrid, 1000);
+    console.log(userMoves);
 
     if (userLives < 3 && userScore % 5 === 0) {
     userLives++;
@@ -111,10 +135,10 @@ console.log("clicked");
     generateRandomPath(width);
 
   } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
-    $squareChosen.css('background', 'green');
+    $('#'+id).css('background', 'green');
 
   } else {
-    $squareChosen.css('background', 'red');
+    $('#'+id).css('background', 'red');
     userLives--;
     $('#lives').text("Lives: " + userLives);
     if (userLives === 0) {
@@ -185,7 +209,7 @@ function getHint() {
 
 function generateGridAndPath() {
   $('.grid').empty();
-  width = $(this).val();
+  width = parseInt($(this).val());
 
   for (var i=0; i < Math.pow(width,2); i++) {
     var $gridsquare = $('<li></li>').addClass("gridsquare"+width);

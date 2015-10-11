@@ -80,6 +80,7 @@ header nav > ul > li a:before {
   position: absolute;
   top: 17.5px;
   left: 17.5px;
+  z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
@@ -92,6 +93,7 @@ header nav > ul > li a:before {
   position: absolute;
   top: 14px;
   left: 14px;
+  z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
@@ -104,6 +106,7 @@ header nav > ul > li a:before {
   position: absolute;
   top: 11px;
   left: 11px;
+  z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
@@ -116,6 +119,7 @@ header nav > ul > li a:before {
   position: absolute;
   top: 9px;
   left: 9px;
+  z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
