@@ -11,7 +11,7 @@ function generateGrid(width) {
   var size = Math.pow(width,2); 
   var initialGrid;
   initialGrid = Array.apply(null, {length: size}).map(Number.call, Number);
-  console.log(initialGrid);
+
   for (i=0; i<width; i++) {
     var j   = 0; 
     grid[i] = initialGrid.splice(j,width);
@@ -75,16 +75,15 @@ var userLives = 3;
 var userScore = 0;
 
 function setUp() {
-  $('.gridsquare').on("click", playGame);
+  $('.chooseLevel').on("click", generateGridAndPath);
   $('#reset').on("click", reset); 
   $('#hint').on("click", getHint);
-  $('.chooseLevel').on("click", generateGridAndPath);
 }
 
 // Need to compare user move to random path array to see if move is correct
 
 function playGame() {
-
+console.log("clicked");
   var $squareChosen = $(this);
   var $squareChosenId = parseInt($squareChosen.attr('id'));
   userMoves.push($squareChosenId);
@@ -181,7 +180,6 @@ function generateGridAndPath() {
   }
 
   generateGrid(width);
-  console.log(grid);
   generateRandomPath(width);
-
+  $('.gridsquare'+width).on("click", playGame);
 }
