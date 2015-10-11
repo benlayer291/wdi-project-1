@@ -91,22 +91,23 @@ function playGame() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
     console.log("winner");
-    userMoves = [0];
-    setTimeout(function() {
-      $('li').css('background', 'white');
-      $('#0').css('background', 'green');
-    }, 1000);
+    setTimeout(resetGrid, 1000);
     generateRandomPath(width);
-    console.log(randomPath);
+
   } else if (userMoves[userMoves.length-1] == randomPath[userMoves.length-1]) {
     $squareChosen.css('background', 'green');
+
   } else {
     $squareChosen.css('background', 'red');
-    userMoves = [0];
-    console.log(userMoves);
-    setTimeout(function() {
-      $('li').css('background', 'white');
-      $('#0').css('background', 'green');
-    }, 1000);
+    setTimeout(resetGrid, 1000);
+    
   }
+}
+
+//Need a function to reset the grid
+
+function resetGrid() {
+  userMoves = [0];
+  $('li').css('background', 'white');
+  $('#0').css('background', 'green');
 }
