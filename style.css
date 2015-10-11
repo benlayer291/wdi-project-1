@@ -35,12 +35,28 @@ header nav > ul > li a:before {
   border: 1px solid #000;
 }
 
-.gridsquare {
+.gridsquare3 {
   width: 148px;
   height: 148px;
   float: left;
   border: 1px solid #000;
   line-height: 148px;
+}
+
+.gridsquare4 {
+  width: 110.5px;
+  height: 110.5px;
+  float: left;
+  border: 1px solid #000;
+  line-height: 110.5px;
+}
+
+.gridsquare5 {
+  width: 88px;
+  height: 88px;
+  float: left;
+  border: 1px solid #000;
+  line-height: 90px;
 }
 
 main > ul > li:nth-child(1) {

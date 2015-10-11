@@ -1,14 +1,11 @@
 $(function() {
   console.log("working");
-  generateGrid(width);
-  console.log(grid);
-  generateRandomPath(width);
   setUp();
 })
 
 //Need to generate a grid, of any size, to play the maze game on
 var grid  = [];
-var width = 3;
+var width;
 
 function generateGrid(width) {
   var size = Math.pow(width,2); 
@@ -81,6 +78,7 @@ function setUp() {
   $('.gridsquare').on("click", playGame);
   $('#reset').on("click", reset); 
   $('#hint').on("click", getHint);
+  $('.chooseLevel').on("click", generateGridAndPath);
 }
 
 // Need to compare user move to random path array to see if move is correct
@@ -94,7 +92,6 @@ function playGame() {
 
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
-    console.log("winner");
     userScore++;
     $('#score').text("Score: " + userScore)
     setTimeout(resetGrid, 1000);
@@ -159,6 +156,7 @@ function reset() {
   resetGrid();
   resetLives();
   resetScore();
+  generateRandomPath(width);
 }
 
 //Need a function that displays the path, a "hint" when user is stuck
@@ -169,4 +167,21 @@ function getHint() {
   $('#'+randomPath[i]).css('background', 'green');
   setTimeout(resetGrid, 500);
  }
+}
+
+//Need to be able to dynamically create grids of different sizes on the page
+
+function generateGridAndPath() {
+  width = $(this).val();
+  var $gridsquare = $('<li></li>');
+
+  for (var i=0; i < Math.pow(width,2); i++) {
+    var $gridsquare = $('<li></li>').addClass("gridsquare"+width);
+    $('.grid').append($gridsquare.attr("id", i));
+  }
+
+  generateGrid(width);
+  console.log(grid);
+  generateRandomPath(width);
+
 }
