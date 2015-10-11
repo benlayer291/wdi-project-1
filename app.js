@@ -79,9 +79,7 @@ var userScore = 0;
 
 function setUp() {
   $('.gridsquare').on("click", playGame);
-  $('#reset').on("click", resetLives); 
-  $('#reset').on("click", resetGrid);
-  $('#reset').on("click", resetScore);
+  $('#reset').on("click", reset); 
   $('#hint').on("click", getHint);
 }
 
@@ -153,6 +151,13 @@ function resetScore() {
   $('#score').text("Score: " + userScore);
 }
 
+//Total reset function required
+
+function reset() {
+  resetGrid();
+  resetLives();
+  resetScore();
+}
 
 //Need a function that displays the path, a "hint" when user is stuck
 
