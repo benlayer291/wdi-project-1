@@ -96,7 +96,12 @@ console.log("clicked");
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
     userScore++;
-    $('#score').text("Score: " + userScore)
+    $('#score').text("Score: " + userScore);
+    for (var i=0; i <grid.length; i++) {
+      for(var j=0; j<grid.length; j++) {
+      $('#'+grid[i][j]).css('background', 'green');
+      }
+    }
     setTimeout(resetGrid, 1000);
 
     if (userLives < 3 && userScore % 5 === 0) {

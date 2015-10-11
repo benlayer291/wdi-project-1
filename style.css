@@ -33,6 +33,7 @@ header nav > ul > li a:before {
   max-height: 450px;
   overflow: hidden;
   border: 1px solid #000;
+  position: relative;
 }
 
 .gridsquare3 {
@@ -58,6 +59,39 @@ header nav > ul > li a:before {
   border: 1px solid #000;
   line-height: 90px;
 }
+
+.gridsquare6 {
+  width: 73px;
+  height: 73px;
+  float: left;
+  border: 1px solid #000;
+  line-height: 90px;
+}
+
+/*.gridResult {
+  margin: 0 auto;
+  max-width: 450px;
+  max-height: 450px;
+  overflow: hidden;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.gridResultInfoWin {
+  width: 448px;
+  height: 448px;
+  background: rgba(255, 255, 255, 0.1);
+  line-height: 448px;
+  position:absolute;
+}
+
+.gridResultInfoLose {
+  width: 448px;
+  height: 448px;
+  background: rgba(255, 255, 255, 0.1);
+  line-height: 448px;
+  position:absolute;
+}*/
 
 main > ul > li:nth-child(1) {
   background: green;
