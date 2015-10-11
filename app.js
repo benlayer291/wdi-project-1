@@ -84,11 +84,11 @@ function getUserMove() {
 function playGame() {
 
   var $squareChosen = $(this);
-  var $squareChosenId = $squareChosen.attr('id');
+  var $squareChosenId = parseInt($squareChosen.attr('id'));
   userMoves.push($squareChosenId);
   console.log(userMoves);
 
-  if ( userMoves[userMoves.length-1] == randomPath[userMoves.length-1] && userMoves[userMoves.length-1] == grid[width-1][width-1]) {
+  if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
     console.log("winner");
     userMoves = [0];
@@ -109,6 +109,4 @@ function playGame() {
       $('#0').css('background', 'green');
     }, 1000);
   }
-
-
 }

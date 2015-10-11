@@ -21,10 +21,6 @@ header nav > ul > li a {
   text-decoration: none;
 }
 
-header nav > ul > li a:hover {
-  background: #ffc000;
-}
-
 header nav > ul > li a:before {
   content:'\2630';
 }
@@ -33,8 +29,8 @@ header nav > ul > li a:before {
 
 .grid {
   margin: 0 auto;
-  width: 450px;
-  height: 450px;
+  max-width: 450px;
+  max-height: 450px;
   overflow: hidden;
   border: 1px solid #000;
 }
@@ -47,6 +43,15 @@ header nav > ul > li a:before {
   line-height: 148px;
 }
 
-Main > ul > li:nth-child(1) {
+main > ul > li:nth-child(1) {
   background: green;
+}
+
+main > div {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+main div > ul > li {
+  display: inline;
 }
