@@ -1,6 +1,10 @@
 $(function() {
   console.log("working");
   setUp();
+  width=3;
+  generateGrid(width);
+  generateRandomPath(width);
+  $('.gridsquare'+width).on("click", playGame);
 })
 
 //Need to generate a grid, of any size, to play the maze game on
@@ -161,7 +165,11 @@ function reset() {
 //Need a function that displays the path, a "hint" when user is stuck
 
 function getHint() {
+  if (userLives === 1) {
+    return console.log("not enough lives");
+  }
   userLives--;
+  $('#lives').text("Lives: " + userLives);
   for (var i=0; i<randomPath.length; i++) {
   $('#'+randomPath[i]).css('background', 'green');
   setTimeout(resetGrid, 500);
