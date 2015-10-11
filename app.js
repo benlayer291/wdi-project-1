@@ -75,11 +75,13 @@ function generateRandomPath(width) {
 
 var userMoves = [0];
 var userLives = 3;
+var userScore = 0;
 
 function setUp() {
   $('.gridsquare').on("click", playGame);
   $('#reset').on("click", resetLives); 
   $('#reset').on("click", resetGrid);
+  $('#reset').on("click", resetScore);
   $('#hint').on("click", getHint);
 }
 
@@ -95,8 +97,14 @@ function playGame() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $squareChosen.css('background', 'green');
     console.log("winner");
+    userScore++;
+    $('#score').text("Score: " + userScore)
     setTimeout(resetGrid, 1000);
-    resetLives();
+
+    if (userLives < 3) {
+    userLives++;
+    }
+
     generateRandomPath(width);
 
   } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
@@ -105,6 +113,7 @@ function playGame() {
   } else {
     $squareChosen.css('background', 'red');
     userLives--;
+    // $('#lives').text("Lives: " + userLives);
 
     if (userLives === 0) {
       for (var i=0; i <grid.length; i++) {
@@ -114,11 +123,12 @@ function playGame() {
       }
       console.log("Loser");
       setTimeout(resetGrid, 3000);
-      resetLives();
+      setTimeout(resetLives, 500);
       generateRandomPath(width);
     }
     setTimeout(resetGrid, 500);
   }
+  $('#lives').text("Lives: " + userLives);
 }
 
 //Need a function to reset the grid
@@ -127,19 +137,27 @@ function resetGrid() {
   userMoves = [0];
   $('li').css('background', 'white');
   $('#0').css('background', 'green');
-  console.log(userLives);
 }
 
 //Need a function to reset lives
 
 function resetLives() {
-  return userLives = 3;
-  console.log(userLives);
+  userLives = 3;
+  $('#lives').text("Lives: " + userLives);
 }
+
+//Need a function to reset score
+
+function resetScore() {
+  userScore = 0;
+  $('#score').text("Score: " + userScore);
+}
+
 
 //Need a function that displays the path, a "hint" when user is stuck
 
 function getHint() {
+  userLives--;
   for (var i=0; i<randomPath.length; i++) {
   $('#'+randomPath[i]).css('background', 'green');
   setTimeout(resetGrid, 500);
