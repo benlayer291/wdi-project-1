@@ -95,14 +95,14 @@ console.log(width);
     id+=1;
     console.log(id);
     userMoves.push(id);
-    $('.cursor'+width).animate({left: "+="+((450/width)-2)+"px"}, 'fast');
+    $('.cursor'+width).animate({left: "+="+((450/width)-2)+"px"}, 100, 'swing');
     console.log(userMoves);
     checkWin();
   } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
     id+=width;
     console.log(id);
     userMoves.push(id);
-    $('.cursor'+width).animate({top: "+="+((450/width)-2)+"px"}, 'fast');
+    $('.cursor'+width).animate({top: "+="+((450/width)-2)+"px"}, 100, 'swing');
     console.log(userMoves);
     checkWin();
   }
@@ -118,6 +118,7 @@ console.log(width);
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
     $('#'+id).css('background', 'green');
+    $('.cursor'+width).css('background', 'blue');
     userScore++;
     $('#score').text("Score: " + userScore);
     for (var i=0; i <grid.length; i++) {
@@ -136,9 +137,11 @@ function checkWin() {
 
   } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
     $('#'+id).css('background', 'green');
+    $('.cursor'+width).css('background', 'blue');
 
   } else {
     $('#'+id).css('background', 'red');
+    $('.cursor'+width).css('background', 'orange');
     userLives--;
     $('#lives').text("Lives: " + userLives);
     if (userLives === 0) {
@@ -164,8 +167,12 @@ function checkWin() {
 
 function resetGrid() {
   userMoves = [0];
+  id=0;
+  $('li').removeClass('cursor'+width);
+  $('#0').html('<div class="cursor'+width+'"></div>')
   $('li').css('background', 'white');
   $('#0').css('background', 'green');
+  console.log(userMoves);
 }
 
 //Need a function to reset lives
