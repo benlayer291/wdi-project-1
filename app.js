@@ -186,7 +186,7 @@ function getHint() {
 function generateGridAndPath() {
   $('.grid').empty();
   width = $(this).val();
-  var $gridsquare = $('<li></li>');
+  // var $gridsquare = $('<li></li>');
 
   for (var i=0; i < Math.pow(width,2); i++) {
     var $gridsquare = $('<li></li>').addClass("gridsquare"+width);
@@ -196,4 +196,28 @@ function generateGridAndPath() {
   generateGrid(width);
   generateRandomPath(width);
   $('.gridsquare'+width).on("click", playGame);
+}
+
+//Need to control game using arrow keys, so need to create function that responds
+//to key presses
+
+function keyMoves() {
+
+  function moveRight() {
+    $('#cursor').addClass('moveRight');
+    
+  }
+
+  function moveDown() {
+    $('#cursor').addClass('moveDown');
+  }
+
+  switch(keypressed) {
+    case 'right':
+    moveRight();
+    break;
+    case 'down':
+    moveDown();
+    break;
+  }
 }

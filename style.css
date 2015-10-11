@@ -42,6 +42,7 @@ header nav > ul > li a:before {
   float: left;
   border: 1px solid #000;
   line-height: 148px;
+  position: relative;
 }
 
 .gridsquare4 {
@@ -50,6 +51,7 @@ header nav > ul > li a:before {
   float: left;
   border: 1px solid #000;
   line-height: 110.5px;
+  position: relative;
 }
 
 .gridsquare5 {
@@ -58,6 +60,7 @@ header nav > ul > li a:before {
   float: left;
   border: 1px solid #000;
   line-height: 90px;
+  position: relative;
 }
 
 .gridsquare6 {
@@ -66,31 +69,35 @@ header nav > ul > li a:before {
   float: left;
   border: 1px solid #000;
   line-height: 90px;
-}
-
-/*.gridResult {
-  margin: 0 auto;
-  max-width: 450px;
-  max-height: 450px;
-  overflow: hidden;
-  border: 1px solid #000;
   position: relative;
 }
 
-.gridResultInfoWin {
-  width: 448px;
-  height: 448px;
-  background: rgba(255, 255, 255, 0.1);
-  line-height: 448px;
-  position:absolute;
+/*.person {
+  height: 100px;
+  width: 100px;
+  background: pink;
+}*/
+
+.cursor3 {
+  width: 111px;
+  height: 111px;
+  border-radius: 100%;
+  background:pink;
+  position: absolute;
+  top: 17.5px;
+  left: 17.5px;
+  transform: translate(0, 0);
+  transition: transform 500ms;
 }
 
-.gridResultInfoLose {
-  width: 448px;
-  height: 448px;
-  background: rgba(255, 255, 255, 0.1);
-  line-height: 448px;
-  position:absolute;
+/*#cursor.moveRight {
+  transform: translate(widthpx, 0)
+  transition: transform 500ms ease-out;
+}*/
+
+/**#cursor.moveDown {
+  transform: translate(0, widthpx)
+  transition: transform 500ms ease-out;
 }*/
 
 main > ul > li:nth-child(1) {
