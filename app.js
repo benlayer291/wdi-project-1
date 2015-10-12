@@ -91,39 +91,35 @@ function playGame() {
 console.log("keyed");
 console.log(width);
   var keypressed = event.which;
+
   if(id < (Math.pow(width,2)-1) && keypressed === 39) {
     id+=1;
     console.log(id);
     userMoves.push(id);
     $('.cursor'+width).animate({left: "+="+((450/width)-2)+"px"}, 100, 'swing');
-    console.log(userMoves);
     checkWin();
+
   } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
     id+=width;
     console.log(id);
     userMoves.push(id);
     $('.cursor'+width).animate({top: "+="+((450/width)-2)+"px"}, 100, 'swing');
-    console.log(userMoves);
     checkWin();
-  }
 
-  // var $squareChosen = $(event.which);
-  // console.log($squareChosen);
-  // var $squareChosenId = parseInt($squareChosen.attr('id'));
-  // userMoves.push($squareChosenId);
+  }
 }
 
 
 
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
-    $('#'+id).css('background', 'green');
-    $('.cursor'+width).css('background', 'blue');
+    // $('#'+id).addClass('correct-square');
+    $('.cursor'+width).addClass('correct');
     userScore++;
     $('#score').text("Score: " + userScore);
     for (var i=0; i <grid.length; i++) {
       for(var j=0; j<grid.length; j++) {
-      $('#'+grid[i][j]).css('background', 'green');
+      $('#'+grid[i][j]).addClass('correct-square');
       }
     }
     setTimeout(resetGrid, 1000);
@@ -136,19 +132,19 @@ function checkWin() {
     generateRandomPath(width);
 
   } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
-    $('#'+id).css('background', 'green');
-    $('.cursor'+width).css('background', 'blue');
+    $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
+    $('.cursor'+width).addClass('correct');
 
   } else {
-    $('#'+id).css('background', 'red');
-    $('.cursor'+width).css('background', 'orange');
+    // $('#'+id).addClass('incorrect-square');
+    $('.cursor'+width).addClass('incorrect');
     userLives--;
     $('#lives').text("Lives: " + userLives);
     if (userLives === 0) {
 
       for (var i=0; i <grid.length; i++) {
         for(var j=0; j<grid.length; j++) {
-        $('#'+grid[i][j]).css('background', 'red');
+        $('#'+grid[i][j]).addClass('incorrect-square');
         }
       }
 
@@ -168,10 +164,11 @@ function checkWin() {
 function resetGrid() {
   userMoves = [0];
   id=0;
-  $('li').removeClass('cursor'+width);
-  $('#0').html('<div class="cursor'+width+'"></div>')
-  $('li').css('background', 'white');
-  $('#0').css('background', 'green');
+  $('.gridsquare'+width).removeClass('cursor'+width);
+  $('.gridsquare'+width).removeClass('correct-square')
+  $('.gridsquare'+width).removeClass('incorrect-square');
+  $('#0').html('<div class="cursor'+width+'"></div>');
+  $('.gridsquare'+width).css('background','#D8DBE2;');
   console.log(userMoves);
 }
 
@@ -228,26 +225,4 @@ function generateGridAndPath() {
   $('.gridsquare'+width).on("click", playGame);
 }
 
-//Need to control game using arrow keys, so need to create function that responds
-//to key presses
 
-function keyMoves() {
-
-  function moveRight() {
-    $('#cursor').addClass('moveRight');
-
-  }
-
-  function moveDown() {
-    $('#cursor').addClass('moveDown');
-  }
-
-  switch(keypressed) {
-    case 'right':
-    moveRight();
-    break;
-    case 'down':
-    moveDown();
-    break;
-  }
-}
