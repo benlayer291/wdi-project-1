@@ -1,5 +1,4 @@
 $(function() {
-  console.log("working");
   setUp();
   width=3;
   generateGrid(width);
@@ -90,20 +89,17 @@ function setUp() {
 // Need to compare user move to random path array to see if move is correct
 
 function playGame() {
-console.log("keyed");
-console.log(width);
+
   var keypressed = event.which;
 
   if(id < (Math.pow(width,2)-1) && keypressed === 39) {
     id+=1;
-    console.log(id);
     userMoves.push(id);
     $('.cursor'+width).animate({left: "+="+((450/width))+"px"}, 100, 'swing');
     checkWin();
 
   } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
     id+=width;
-    console.log(id);
     userMoves.push(id);
     $('.cursor'+width).animate({top: "+="+((450/width))+"px"}, 100, 'swing');
     checkWin();
@@ -115,6 +111,7 @@ console.log(width);
 
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
+    
     $('.cursor'+width).addClass('correct-square');
     $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
     setTimeout(function() {
@@ -122,6 +119,7 @@ function checkWin() {
     },200);
 
     userScore++;
+
     $('#score').text("Score: " + userScore);
     $('#score').addClass("correct");
     setTimeout(function() {
@@ -130,6 +128,7 @@ function checkWin() {
 
     if (userLives < 10 && userScore % 3 === 0) {
       userLives++;
+
       $('#lives').text("Lives: " + userLives);
       $('#lives').addClass("correct");
       setTimeout(function() {
@@ -138,7 +137,6 @@ function checkWin() {
     }
 
     setTimeout(resetGrid, 1000);
-    console.log(userMoves);
 
     generateRandomPath(width);
 
@@ -147,9 +145,11 @@ function checkWin() {
     $('.cursor'+width).addClass('correct-square');
 
   } else {
+    userLives--;
+
     $('.cursor'+width).addClass('incorrect-square');
     $('.cursor'+width).addClass('animated shake');
-    userLives--;
+
     $('#lives').text("Lives: " + userLives);
     $('#lives').addClass("incorrect");
     setTimeout(function() {
@@ -186,7 +186,6 @@ function resetGrid() {
   $('#0').html('<div class="cursor'+width+'"></div>');
   $('.cursor'+width).addClass('animated infinite pulse')
   $('.gridsquare'+width).css('background','#D8DBE2;');
-  console.log(userMoves);
 }
 
 //Need a function to reset lives
@@ -217,12 +216,13 @@ function reset() {
 function getHint() {
   if (userLives === 1) {
     $('.message').text("Not enough lives");
-    return setTimeout(function() {
-            $('.message').text("");
-           },500)
+  return setTimeout(function() {
+          $('.message').text("");
+        },500)
   }
   userLives--;
   $('#lives').text("Lives: " + userLives);
+  
   for (var i=0; i<randomPath.length; i++) {
   $('#'+randomPath[i]).addClass('correct-square');
   setTimeout(resetGrid, 500);
@@ -248,8 +248,5 @@ function generateGridAndPath() {
 // Dyanamic menus
 function menuToggle(){
   event.preventDefault();
-  console.log("clicked");
   $(this).siblings().slideToggle();
 }
-
-

@@ -12,10 +12,10 @@ main {
 /*Header*/
 
 header {
-  height: 100px;
+  height: 90px;
   max-width: 960px;
   margin: 0 auto;
-  line-height: 100px;
+  line-height: 90px;
   background: #729EA1;
 }
 
@@ -64,7 +64,7 @@ display {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   color:#C0BCB5;
-  margin: 10px auto;
+  margin: 15px auto;
   background: #729EA1;
   cursor:default;
 }
@@ -144,7 +144,7 @@ display {
 }
 
 .grid {
-  margin: 15px auto;
+  margin: 20px auto 20px auto;
   width: 450px;
   height: 450px;
   /*width: 100%;
@@ -315,10 +315,10 @@ display {
 /*Footer*/
 
 footer {
-  height: 100px;
+  height: 90px;
   max-width: 960px;
   margin: 70px auto 0 auto;
-  line-height: 100px;
+  line-height: 90px;
   background: #729EA1;
   overflow: hidden;
 
