@@ -57,6 +57,7 @@ main .column-small {
   border-radius: 5px;
   text-align: center;
   margin: 0 35px;
+  font-family: 'Raleway', sans-serif;
 }
 
 main .column-large {
@@ -165,11 +166,11 @@ main .grid {
 }
 
 .correct-square {
-  background:#85FF9E;
+  background:#0CCE6B;
 }
 
 .correct {
-  background:#85FF9E;
+  background:#0CCE6B;
 }
 
 .incorrect-square {
@@ -178,6 +179,45 @@ main .grid {
 
 .incorrect {
   background:#EF2D56;
+}
+
+.tool-display {
+  width: 218px;
+  height:48px;
+  line-height: 48px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color:#C0BCB5;
+  margin: 49px 10px 49px 10px;
+  border: 1px solid #C0BCB5;
+  display: inline-block;
+  
+}
+
+.button {
+  width: 218px;
+  height:23px;
+  line-height: 23px; 
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color:#C0BCB5;
+  /*border: 1px solid #C0BCB5;*/
+  margin: 35px 10px;
+  background: #729EA1;
+}
+
+.chooseLevel {
+  width: 218px;
+  height:23px;
+  line-height: 23px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color:#C0BCB5;
+  /*border: 1px solid #C0BCB5;*/
+  margin: 10px 10px;
+  background: #729EA1;
+
 }
 
 /*Footer*/

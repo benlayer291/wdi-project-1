@@ -206,7 +206,7 @@ function getHint() {
   userLives--;
   $('#lives').text("Lives: " + userLives);
   for (var i=0; i<randomPath.length; i++) {
-  $('#'+randomPath[i]).css('background', 'green');
+  $('#'+randomPath[i]).addClass('correct-square');
   setTimeout(resetGrid, 500);
  }
 }
