@@ -76,7 +76,7 @@ function generateRandomPath(width) {
 
 var userMoves = [0];
 var id=0;
-var userLives = 3;
+var userLives = 5;
 var userScore = 0;
 
 function setUp() {
@@ -113,19 +113,22 @@ console.log(width);
 
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
-    // $('#'+id).addClass('correct-square');
     $('.cursor'+width).addClass('correct');
+    $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
+    $('#'+userMoves[userMoves.length-1]).addClass('correct-square');
     userScore++;
     $('#score').text("Score: " + userScore);
-    for (var i=0; i <grid.length; i++) {
-      for(var j=0; j<grid.length; j++) {
-      $('#'+grid[i][j]).addClass('correct-square');
-      }
-    }
+    // setTimeout(function() {
+    //   for (var i=0; i <grid.length; i++) {
+    //     for(var j=0; j<grid.length; j++) {
+    //     $('#'+grid[i][j]).addClass('correct-square');
+    //     }
+    //   }
+    // },1000);
     setTimeout(resetGrid, 1000);
     console.log(userMoves);
 
-    if (userLives < 3 && userScore % 5 === 0) {
+    if (userLives < 5 && userScore % 3 === 0) {
     userLives++;
     }
 
@@ -136,7 +139,6 @@ function checkWin() {
     $('.cursor'+width).addClass('correct');
 
   } else {
-    // $('#'+id).addClass('incorrect-square');
     $('.cursor'+width).addClass('incorrect');
     userLives--;
     $('#lives').text("Lives: " + userLives);
@@ -175,7 +177,7 @@ function resetGrid() {
 //Need a function to reset lives
 
 function resetLives() {
-  userLives = 3;
+  userLives = 5;
   $('#lives').text("Lives: " + userLives);
 }
 
