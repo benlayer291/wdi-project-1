@@ -5,6 +5,7 @@ body {
 
 main {
   margin: 0 auto;
+  max-width: 1024px;
 }
 
 /*Header*/
@@ -28,7 +29,7 @@ h1 {
 /*Main*/
 main .container {
   margin: 75px auto;
-  width: 1100px;
+  width: 1024px;
   overflow: hidden;
 }
 
@@ -39,7 +40,7 @@ main .column-small {
   border: 5px solid #C0BCB5;
   border-radius: 5px;
   text-align: center;
-  margin: 0 35px;
+  margin: 0 15px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -111,8 +112,6 @@ main .grid {
   top: 18px;
   left: 18px;
   z-index:1;
-  /*transform: translate(0, 0);
-  transition: transform 500ms;*/
 }
 
 .cursor4 {
@@ -124,8 +123,6 @@ main .grid {
   top: 14px;
   left: 14px;
   z-index:1;
-  /*transform: translate(0, 0);
-  transition: transform 500ms;*/
 }
 
 .cursor5 {
@@ -137,8 +134,6 @@ main .grid {
   top: 10px;
   left: 10px;
   z-index:1;
-  /*transform: translate(0, 0);
-  transition: transform 500ms;*/
 }
 
 .cursor6 {
@@ -150,8 +145,6 @@ main .grid {
   top: 9px;
   left: 9px;
   z-index:1;
-  /*transform: translate(0, 0);
-  transition: transform 500ms;*/
 }
 
 .correct-square {
@@ -263,4 +256,14 @@ footer {
   line-height: 100px;
   background: #729EA1;
   overflow: hidden;
+}
+
+/*Responsive design*/
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 640px) {
+
 }
