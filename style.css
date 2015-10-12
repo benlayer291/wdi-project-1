@@ -105,8 +105,8 @@ main .grid {
   top: 18px;
   left: 18px;
   z-index:1;
-  transform: translate(0, 0);
-  transition: transform 500ms;
+  /*transform: translate(0, 0);
+  transition: transform 500ms;*/
 }
 
 .cursor4 {
@@ -118,8 +118,8 @@ main .grid {
   top: 14px;
   left: 14px;
   z-index:1;
-  transform: translate(0, 0);
-  transition: transform 500ms;
+  /*transform: translate(0, 0);
+  transition: transform 500ms;*/
 }
 
 .cursor5 {
@@ -131,8 +131,8 @@ main .grid {
   top: 10px;
   left: 10px;
   z-index:1;
-  transform: translate(0, 0);
-  transition: transform 500ms;
+  /*transform: translate(0, 0);
+  transition: transform 500ms;*/
 }
 
 .cursor6 {
@@ -144,8 +144,8 @@ main .grid {
   top: 9px;
   left: 9px;
   z-index:1;
-  transform: translate(0, 0);
-  transition: transform 500ms;
+  /*transform: translate(0, 0);
+  transition: transform 500ms;*/
 }
 
 .correct-square {
@@ -186,9 +186,24 @@ main .grid {
   font-weight: 500;
   color:#C0BCB5;
   /*border: 1px solid #C0BCB5;*/
-  margin: 35px 10px;
+  margin: 35px 10px 0px 10px;
   background: #729EA1;
-  cursor:pointer;
+  cursor:default;
+}
+.button:hover {
+  opacity: 0.75;
+}
+
+.message {
+  width: 218px;
+  height:25px;
+  line-height: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color:#C0BCB5;
+  margin: 5px 10px 0px 10px;
+  display: inline-block;
 }
 
 #instruction-title {
@@ -227,10 +242,12 @@ main .grid {
   /*border: 1px solid #C0BCB5;*/
   margin: 10px 10px;
   background: #729EA1;
-  cursor:pointer;
-
+  cursor:default;
 }
 
+.chooseLevel:hover {
+  opacity: 0.75;
+}
 /*Footer*/
 
 footer {

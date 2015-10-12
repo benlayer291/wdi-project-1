@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,200,100' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="animate.min.css">
+  <link rel="stylesheet" href="animate.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src ="app.js"></script>
@@ -23,12 +23,12 @@
           <li class="chooseLevel" value="3">3 x 3</li>
           <li class="chooseLevel" value="4">4 x 4</li>
           <li class="chooseLevel" value="5">5 x 5</li>
-          <li class="chooseLevel" value="6">5 x 5</li>
+          <li class="chooseLevel" value="6">6 x 6</li>
         </ul>
       </div>
       <div class="column-large">
         <ul class="grid">
-          <li class="gridsquare3" id="0"><div class="cursor3"></div></li>
+          <li class="gridsquare3" id="0"><div class="cursor3 animated infinite pulse"></div></li>
           <li class="gridsquare3" id="1"></li>
           <li class="gridsquare3" id="2"></li>
           <li class="gridsquare3" id="3"></li>
@@ -45,6 +45,7 @@
           <li class="tool-display"id="lives">Lives: 10</li>
           <li class="button"id='reset'>RESET</li>
           <li class="button"id='hint'>HINT</li>
+          <li class="message"></li>
         </ul>
       </div>
     </div>
