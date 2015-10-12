@@ -118,13 +118,11 @@ function checkWin() {
     $('#'+userMoves[userMoves.length-1]).addClass('correct-square');
     userScore++;
     $('#score').text("Score: " + userScore);
-    // setTimeout(function() {
-    //   for (var i=0; i <grid.length; i++) {
-    //     for(var j=0; j<grid.length; j++) {
-    //     $('#'+grid[i][j]).addClass('correct-square');
-    //     }
-    //   }
-    // },1000);
+    $('#score').addClass("correct-square");
+    setTimeout(function() {
+      $('#score').removeClass("correct-square");
+    },1000);
+
     setTimeout(resetGrid, 1000);
     console.log(userMoves);
 
@@ -142,6 +140,11 @@ function checkWin() {
     $('.cursor'+width).addClass('incorrect');
     userLives--;
     $('#lives').text("Lives: " + userLives);
+    $('#lives').addClass("incorrect-square");
+    setTimeout(function() {
+      $('#lives').removeClass("incorrect-square");
+    },500);
+
     if (userLives === 0) {
 
       for (var i=0; i <grid.length; i++) {
