@@ -83,6 +83,8 @@ function setUp() {
   $('.chooseLevel').on("click", generateGridAndPath);
   $('#reset').on("click", reset); 
   $('#hint').on("click", getHint);
+  $('#level-button').on('click',menuToggle);
+  $('#instruction-button').on('click',menuToggle);  
 }
 
 // Need to compare user move to random path array to see if move is correct
@@ -113,7 +115,7 @@ console.log(width);
 
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
-    $('.cursor'+width).addClass('correct');
+    $('.cursor'+width).addClass('correct-square');
     $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
     setTimeout(function() {
       $('#'+userMoves[userMoves.length-1]).addClass('correct-square');
@@ -121,17 +123,17 @@ function checkWin() {
 
     userScore++;
     $('#score').text("Score: " + userScore);
-    $('#score').addClass("correct-square");
+    $('#score').addClass("correct");
     setTimeout(function() {
-      $('#score').removeClass("correct-square");
+      $('#score').removeClass("correct");
     },1000);
 
     if (userLives < 10 && userScore % 3 === 0) {
       userLives++;
       $('#lives').text("Lives: " + userLives);
-      $('#lives').addClass("correct-square");
+      $('#lives').addClass("correct");
       setTimeout(function() {
-        $('#lives').removeClass("correct-square");
+        $('#lives').removeClass("correct");
       },1000);
     }
 
@@ -142,17 +144,17 @@ function checkWin() {
 
   } else if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1]) {
     $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
-    $('.cursor'+width).addClass('correct');
+    $('.cursor'+width).addClass('correct-square');
 
   } else {
-    $('.cursor'+width).addClass('incorrect');
+    $('.cursor'+width).addClass('incorrect-square');
     $('.cursor'+width).addClass('animated shake');
     userLives--;
     $('#lives').text("Lives: " + userLives);
-    $('#lives').addClass("incorrect-square");
+    $('#lives').addClass("incorrect");
     setTimeout(function() {
       $('.cursor'+width).addClass('animated shake');
-      $('#lives').removeClass("incorrect-square");
+      $('#lives').removeClass("incorrect");
     },500);
 
     if (userLives === 0) {
@@ -241,6 +243,13 @@ function generateGridAndPath() {
   $('.cursor'+width).addClass('animated infinite pulse');
   generateGrid(width);
   generateRandomPath(width);
+}
+
+// Dyanamic menus
+function menuToggle(){
+  event.preventDefault();
+  console.log("clicked");
+  $(this).siblings().slideToggle();
 }
 
 

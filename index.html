@@ -13,42 +13,47 @@
 <body>
   <header>
     <h1>MAZE</h1>
+    <ul class="display">
+      <li class="display-item"id="score">Score: 0</li>
+      <li class="display-item"id="lives">Lives: 10</li>
+    </ul>
   </header>
   <main>
-    <div class="container">
-      <div class="column-small">
-        <ul class="info">
-          <li id="instruction-title">Instructions</li>
-          <li id="instruction"><div id="how-to">HOW TO PLAY:</div> Use the down and right arrow keys to move.<br> If you reach the south-west corner you score a point. Make a wrong turn and you lose a life.<br> If you manage to score 3 points, you'll be awarded an extra life.<br> If you get stuck, use the hint button...but it'll cost you!</li>
-          <li class="chooseLevel" value="3">3 x 3</li>
-          <li class="chooseLevel" value="4">4 x 4</li>
-          <li class="chooseLevel" value="5">5 x 5</li>
-          <li class="chooseLevel" value="6">6 x 6</li>
-        </ul>
-      </div>
-      <div class="column-large">
-        <ul class="grid">
-          <li class="gridsquare3" id="0"><div class="cursor3 animated infinite pulse"></div></li>
-          <li class="gridsquare3" id="1"></li>
-          <li class="gridsquare3" id="2"></li>
-          <li class="gridsquare3" id="3"></li>
-          <li class="gridsquare3" id="4"></li>
-          <li class="gridsquare3" id="5"></li>
-          <li class="gridsquare3" id="6"></li>
-          <li class="gridsquare3" id="7"></li>
-          <li class="gridsquare3" id="8"></li>
-        </ul>
-      </div>
-      <div class="column-small">
-        <ul class="tools">
-          <li class="tool-display"id="score">Score: 0</li>
-          <li class="tool-display"id="lives">Lives: 10</li>
-          <li class="button"id='reset'>RESET</li>
-          <li class="button"id='hint'>HINT</li>
-          <li class="message"></li>
-        </ul>
-      </div>
+    <div class="levels-menu">
+      <ul class="levels">
+        <li id="level-button">Levels</li>
+        <li class="chooseLevel" value="3">3 x 3</li>
+        <li class="chooseLevel" value="4">4 x 4</li>
+        <li class="chooseLevel" value="5">5 x 5</li>
+        <li class="chooseLevel" value="6">6 x 6</li>
+      </ul>
     </div>
+    <div class="instruction-menu">
+      <ul class="instructions">
+        <li id="instruction-button">Instructions</li>
+        <li class="instruction-item"><div id="how-to">HOW TO PLAY:</div> Use the down and right arrow keys to move.<br> If you reach the south-west corner you score a point. Make a wrong turn and you lose a life.<br> If you manage to score 3 points, you'll be awarded an extra life.<br> If you get stuck, use the hint button...but it'll cost you!</li>
+      </ul>
+    </div>
+    <div class="column-large">
+      <ul class="grid">
+        <li class="gridsquare3" id="0"><div class="cursor3 animated infinite pulse"></div></li>
+        <li class="gridsquare3" id="1"></li>
+        <li class="gridsquare3" id="2"></li>
+        <li class="gridsquare3" id="3"></li>
+        <li class="gridsquare3" id="4"></li>
+        <li class="gridsquare3" id="5"></li>
+        <li class="gridsquare3" id="6"></li>
+        <li class="gridsquare3" id="7"></li>
+        <li class="gridsquare3" id="8"></li>
+      </ul>
+    </div>
+    <div class="tools-bar">
+      <ul class="tools">
+        <li class="button"id='hint'>HINT</li>
+        <li class="message"></li>
+        <li class="button"id='reset'>RESET</li>
+      </ul>
+    </div> 
   </main>
   <footer></footer>
 </body>
