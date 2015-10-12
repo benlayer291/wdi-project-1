@@ -45,29 +45,30 @@ header nav > ul > li a:before {
 /*Main*/
 main .container {
   margin: 75px auto;
-  width: 960px;
+  width: 1100px;
   overflow: hidden;
 }
 
 main .column-small {
   float: left;
   width: 240px;
-  height: 440px;
+  height: 450px;
   border: 5px solid #C0BCB5;
   border-radius: 5px;
   text-align: center;
+  margin: 0 35px;
 }
 
 main .column-large {
   float: left;
   width: 460px;
+  height: 450px;
 }
 
 main .grid {
-/*  float:left;*/
   margin: 0 auto;
-  width: 440px;
-  height: 440px;
+  width: 450px;
+  height: 450px;
   overflow: hidden;
   border: 5px solid #C0BCB5;
   border-radius: 5px;
@@ -76,11 +77,11 @@ main .grid {
 
 
 .gridsquare3 {
-  width: 142.67px;
-  height: 142.67px;
+  width: 146px;
+  height: 146px;
   float: left;
-  border: 2.5px solid #C0BCB5;
-  line-height: 113.33px;
+  border: 2px solid #C0BCB5;
+  line-height: 145px;
   position: relative;
 }
 
