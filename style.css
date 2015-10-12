@@ -86,49 +86,50 @@ main .grid {
 }
 
 .gridsquare4 {
-  width: 110.5px;
-  height: 110.5px;
+  width: 108.5px;
+  height: 108.5px;
   float: left;
-  border: 1px solid #000;
-  line-height: 110.5px;
+  border: 2px solid #C0BCB5;
+  line-height: 108.5px;
   position: relative;
 }
 
 .gridsquare5 {
-  width: 88px;
-  height: 88px;
+  width: 86px;
+  height: 86px;
   float: left;
-  border: 1px solid #000;
-  line-height: 90px;
+  border: 2px solid #C0BCB5;
+  line-height: 86px;
   position: relative;
 }
 
 .gridsquare6 {
-  width: 73px;
-  height: 73px;
+  width: 71px;
+  height: 71px;
   float: left;
-  border: 1px solid #000;
-  line-height: 90px;
+  border: 2px solid #C0BCB5;
+  line-height: 71px;
   position: relative;
 }
 
 .cursor3 {
-  width: 111px;
-  height: 111px;
+  width: 110px;
+  height: 110px;
   border-radius: 100%;
   background:#85FF9E;
   position: absolute;
-  top: 17.5px;
-  left: 17.5px;
+  top: 18px;
+  left: 18px;
   z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
 }
 
 .cursor4 {
-  width: 82px;
-  height: 82px;
+  width: 81px;
+  height: 81px;
   border-radius: 100%;
+  background:#85FF9E;
   position: absolute;
   top: 14px;
   left: 14px;
@@ -138,12 +139,13 @@ main .grid {
 }
 
 .cursor5 {
-  width: 66px;
-  height: 66px;
+  width: 65px;
+  height: 65px;
   border-radius: 100%;
+  background:#85FF9E;
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 10px;
+  left: 10px;
   z-index:1;
   transform: translate(0, 0);
   transition: transform 500ms;
@@ -153,6 +155,7 @@ main .grid {
   width: 55px;
   height: 55px;
   border-radius: 100%;
+  background:#85FF9E;
   position: absolute;
   top: 9px;
   left: 9px;

@@ -222,7 +222,6 @@ function generateGridAndPath() {
   $('#0').html('<div class="cursor'+width+'"></div>');
   generateGrid(width);
   generateRandomPath(width);
-  $('.gridsquare'+width).on("click", playGame);
 }
 
 
