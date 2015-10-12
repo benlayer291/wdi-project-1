@@ -59,6 +59,12 @@ main .grid {
   position: relative;
 }
 
+#how-to {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+}
+
 
 .gridsquare3 {
   width: 146px;
