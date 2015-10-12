@@ -1,12 +1,10 @@
 body {
   font-family: 'Lato', sans-serif;
   background: #D8DBE2;
-  /*#EDE3E4*/
 }
 
 main {
   margin: 0 auto;
-  /*position: relative;*/
 }
 
 /*Header*/
@@ -26,21 +24,6 @@ h1 {
   color: #C0BCB5;
   margin-right: 50px;
 }
-
-/*header nav > ul > li {
-  display: inline;
-}
-
-header nav > ul > li a {
-  padding: 15px;
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-}
-
-header nav > ul > li a:before {
-  content:'\2630';
-}*/
 
 /*Main*/
 main .container {
@@ -166,11 +149,11 @@ main .grid {
 }
 
 .correct-square {
-  background:#0CCE6B;
+  background:#85FF9E;
 }
 
 .correct {
-  background:#0CCE6B;
+  background:#85FF9E;
 }
 
 .incorrect-square {
@@ -205,6 +188,7 @@ main .grid {
   /*border: 1px solid #C0BCB5;*/
   margin: 35px 10px;
   background: #729EA1;
+  cursor:pointer;
 }
 
 #instruction-title {
@@ -243,6 +227,7 @@ main .grid {
   /*border: 1px solid #C0BCB5;*/
   margin: 10px 10px;
   background: #729EA1;
+  cursor:pointer;
 
 }
 

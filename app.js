@@ -76,7 +76,7 @@ function generateRandomPath(width) {
 
 var userMoves = [0];
 var id=0;
-var userLives = 5;
+var userLives = 10;
 var userScore = 0;
 
 function setUp() {
