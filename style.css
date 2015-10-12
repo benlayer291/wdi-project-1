@@ -207,6 +207,32 @@ main .grid {
   background: #729EA1;
 }
 
+#instruction-title {
+  width: 218px;
+  height:48px;
+  line-height: 48px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color:#C0BCB5;
+  margin: 20px 10px 10px 10px;
+  border: 1px solid #C0BCB5;
+  display: inline-block;
+}
+
+#instruction {
+  width: 218px;
+  height:203px;
+  line-height: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color:#C0BCB5;
+  margin: 10px 10px 5px 10px;
+  border: 1px solid #C0BCB5;
+  display: inline-block;
+}
+
 .chooseLevel {
   width: 218px;
   height:23px;
