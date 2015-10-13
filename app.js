@@ -26,7 +26,6 @@ function generateGrid(width) {
 
 //Need to generate a random path across a grid of any size, starting in the north-west corner
 //and finishing in the south-east corner of the grid
-
 var randomPath = [];
 
 function generateRandomPath(width) {
@@ -111,7 +110,7 @@ function playGame() {
 
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
-    
+
     $('.cursor'+width).addClass('correct-square');
     $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
     setTimeout(function() {

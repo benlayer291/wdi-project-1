@@ -321,15 +321,211 @@ footer {
   line-height: 90px;
   background: #729EA1;
   overflow: hidden;
-
 }
 
 /*Responsive design*/
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 600px) {
   
+  .grid {
+    margin: 20px auto 20px auto;
+    width: 300px;
+    height: 300px;
+    /*width: 100%;
+    height: 100%;*/
+    overflow: hidden;
+    border: 5px solid #C0BCB5;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .gridsquare3 {
+    width: 96px;
+    height: 96px;
+    float: left;
+    border: 2px solid #C0BCB5;
+    line-height: 96px;
+    /*line-height: 33.33%;*/
+    position: relative;
+  }
+
+  .gridsquare4 {
+    width: 71px;
+    height: 71px;
+    /*width: 25%;
+    height: 25.1%;*/
+    float: left;
+    border: 2px solid #C0BCB5;
+    line-height: 71px;
+    /*line-height: 25.1%;*/
+    position: relative;
+  }
+
+  .gridsquare5 {
+    width: 56px;
+    height: 56px;
+    /*width: 19.98%;
+    height: 19.98%;*/
+    float: left;
+    border: 2px solid #C0BCB5;
+    line-height: 56px;
+    /*line-height: 19.98%;*/
+    position: relative;
+  }
+
+  .gridsquare6 {
+    width: 46px;
+    height: 46px;
+    /*width: 16.66%;
+    height: 16.66%;*/
+    float: left;
+    border: 2px solid #C0BCB5;
+    line-height: 46px;
+   /* line-height: 16.66%;*/
+    position: relative;
+  }
+
+  .cursor3 {
+    width: 72px;
+    height: 72px;
+    /*width: 73%;
+    height: 73%;*/
+    border-radius: 100%;
+    background:#85FF9E;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    /*top: 12%;
+    left: 12%;*/
+    z-index:1;
+  }
+
+  .cursor4 {
+    width: 54px;
+    height: 54px;
+    /*width: 73%;
+    height: 73%;*/
+    border-radius: 100%;
+    background:#85FF9E;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    /*top: 12%;
+    left: 12%;*/
+    z-index:1;
+  }
+
+  .cursor5 {
+    width: 43px;
+    height: 43px;
+    /*width: 73%;
+    height: 73%;*/
+    border-radius: 100%;
+    background:#85FF9E;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /*top: 12%;
+    left: 12%;*/
+    z-index:1;
+  }
+
+  .cursor6 {
+    width: 55px;
+    height: 55px;
+    /*width: 73%;
+    height: 73%;*/
+    border-radius: 100%;
+    background:#85FF9E;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    /*top: 12%;
+    left: 12%;*/
+    z-index:1;
+  }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 500px) {
 
-}*/*/
+  h1 {
+    font-size: 45px;
+    font-weight: 900;
+    color: #C0BCB5;
+    margin-left: 35px;
+  }
+
+  display {
+    float:right;
+    /*height:100px;*/
+    text-align: right;
+  }
+
+  .display-item {
+    padding: 0px 10px 10px 0px;
+    margin-right: 25px;
+    font-size: 15px;
+  }
+
+  .levels-menu {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .levels {
+    width: 100%;
+  }
+
+  #level-button {
+    width: 100%;
+  }
+
+  .chooseLevel {
+    width: 100%;
+  }
+
+  .instruction-menu {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .instructions {
+    width: 100%;
+  }
+
+  #instruction-button {
+    width: 100%;
+  }
+
+  .instruction-item {
+    width: 100%;
+  }
+
+  .tools {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .message {
+    display:block;
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    margin: 0;
+  }
+
+  footer {
+    margin: 115px auto 0 auto;
+    clear: both;
+  }
+
+}
