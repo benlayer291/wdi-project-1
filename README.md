@@ -8,8 +8,6 @@ This game involves a user travelling across a grid from the north-western most c
 
 [Play Maze here.](https://freemaze.herokuapp.com/)
 
-Desktop:
-![alt text](https://lh3.googleusercontent.com/v7kA2BEmjlU5Gh2Knj5-nZYS0K3AXAhYx2vCLALCJlegmNMBWi1gOhYxqdHShMvcFst7lz_lVLk6e9lIPtP1xPHG93dL3SqGa3-t6GYQoU4M4hJmNQgg0MgTqskFmAmHiA7UaZilDEcDRjGYpvYHiWdW0gJ-YimdDellcIuUA1sqo3WSKeEsEk4K6rBqK-ldrT4acUJuxwWcQ1BcLjadqRqAH2z4i0kBNYcWUobV3mnWPwQgh-M0WEz2rC2Ocf_f8_AKp_hDXTCS-AsDPzh6xA-GJwdhDmIiqcpWNOIza4geSRHIHxjVIwtbuPtJrMJMUsa28DLFSlwO1Fwqv29jgUTtxmZD83CHkaKjGGw9_G1nLX_o0IftMSYMiPGjJmy8ay7lnVz8p-88baxgAi2fXqdIL1wlRfAMKQTKIWyYEg3IxqBbKv83GxpLhJAADHNtZPzrGWL8Y5m3iArPVxWEyTQ29vRzATBlKsDxLPaBNisSQznS0W_v9FfbSBNcHZgyKL18XsG_tH8EDfC590As0EIVh1Rv1E1LiNAjimqJ17M=w451-h801-no)
+![alt text](../images/Screenshot_2015-10-13-16-08-20.png)
 
-Mobile:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![alt text]()
