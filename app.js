@@ -95,7 +95,7 @@ function setUp() {
 function playGame() {
   var keypressed = event.which;
 
-  if(id < (Math.pow(width,2)-1) && keypressed === 39) {
+  if (id < (Math.pow(width,2)-1) && keypressed === 39) {
     id+= 1;
     userMoves.push(id);
     $('.cursor'+width).animate({left: "+="+((gridwidth/width))+"px"}, 100, 'swing');
