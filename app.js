@@ -3,6 +3,7 @@ $(function() {
   width=3;
   generateGrid(width);
   generateRandomPath(width);
+  $('.gridsquare'+width).on('click', playGameClick);
   $(document).on("keyup", playGame);
 })
 
@@ -69,9 +70,16 @@ function generateRandomPath(width) {
 //has been chosen
 
 var userMoves = [0];
-var id=0;
+var id        = 0;
 var userLives = 10;
 var userScore = 0;
+var gridwidth;
+
+  if (document.documentElement.clientWidth < 600) {
+    gridwidth = 300;
+  } else {
+    gridwidth = 450;
+  }
 
 function setUp() {
   $('.chooseLevel').on("click", generateGridAndPath);
@@ -85,29 +93,37 @@ function setUp() {
 // Need to compare user move to random path array to see if move is correct
 
 function playGame() {
-
   var keypressed = event.which;
-  var gridwidth;
-  
-  if (document.documentElement.clientWidth < 600) {
-    gridwidth = 300;
-  } else {
-    gridwidth = 450;
-  }
 
   if(id < (Math.pow(width,2)-1) && keypressed === 39) {
-    id+=1;
+    id+= 1;
     userMoves.push(id);
     $('.cursor'+width).animate({left: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
 
   } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
-    id+=width;
+    id+= width;
     userMoves.push(id);
     $('.cursor'+width).animate({top: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
-
   }
+}
+
+function playGameClick() {
+  var $squareClicked = parseInt($(this).attr('id'));
+  var difference     = ($squareClicked-userMoves[userMoves.length-1]);
+  
+  id+= difference;
+
+  userMoves.push(id);
+
+  if(difference < width) {
+    $('.cursor'+width).animate({left: "+="+((gridwidth/width))+"px"}, 100, 'swing');
+  } else {
+    $('.cursor'+width).animate({top: "+="+((gridwidth/width))+"px"}, 100, 'swing');
+  }
+
+  checkWin();
 }
 
 function checkWin() {
@@ -176,7 +192,7 @@ function checkWin() {
 
 function resetGrid() {
   userMoves = [0];
-  id=0;
+  id        =0;
   $('.gridsquare'+width).removeClass('cursor'+width);
   $('.gridsquare'+width).removeClass('correct-square')
   $('.gridsquare'+width).removeClass('incorrect-square');
@@ -241,6 +257,7 @@ function generateGridAndPath() {
 
   generateGrid(width);
   generateRandomPath(width);
+  $('.gridsquare'+width).on('click', playGameClick);
 }
 
 // Dyanamic menus
