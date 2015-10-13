@@ -423,23 +423,23 @@ footer {
     border-radius: 100%;
     background:#85FF9E;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 7px;
+    left: 7px;
     /*top: 12%;
     left: 12%;*/
     z-index:1;
   }
 
   .cursor6 {
-    width: 55px;
-    height: 55px;
+    width: 36px;
+    height: 36px;
     /*width: 73%;
     height: 73%;*/
     border-radius: 100%;
     background:#85FF9E;
     position: absolute;
-    top: 7px;
-    left: 7px;
+    top: 6px;
+    left: 6px;
     /*top: 12%;
     left: 12%;*/
     z-index:1;
@@ -500,7 +500,8 @@ footer {
   }
 
   .instruction-item {
-    width: 100%;
+    width: 95%;
+    font-size: 14px;
   }
 
   .tools {

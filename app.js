@@ -90,17 +90,24 @@ function setUp() {
 function playGame() {
 
   var keypressed = event.which;
+  var gridwidth;
+  
+  if (document.documentElement.clientWidth < 600) {
+    gridwidth = 300;
+  } else {
+    gridwidth = 450;
+  }
 
   if(id < (Math.pow(width,2)-1) && keypressed === 39) {
     id+=1;
     userMoves.push(id);
-    $('.cursor'+width).animate({left: "+="+((450/width))+"px"}, 100, 'swing');
+    $('.cursor'+width).animate({left: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
 
   } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
     id+=width;
     userMoves.push(id);
-    $('.cursor'+width).animate({top: "+="+((450/width))+"px"}, 100, 'swing');
+    $('.cursor'+width).animate({top: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
 
   }
