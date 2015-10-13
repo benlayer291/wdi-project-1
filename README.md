@@ -8,6 +8,6 @@ This game involves a user travelling across a grid from the north-western most c
 
 [Play Maze here.](https://freemaze.herokuapp.com/)
 
-![alt text](wdi-project-1/images/Screenshot_2015-10-13-16-08-20.png)
+![alt text](./images/Screenshot_2015-10-13-16-08-20.png)
 
 ![alt text]()
