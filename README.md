@@ -1,5 +1,4 @@
 # Maze
-*******************************************************************************
 
 ### GA WDI London - Project 1
 
@@ -9,7 +8,11 @@ This game involves a user travelling across a grid from the north-western most c
 
 [Play Maze here.](https://freemaze.herokuapp.com/)
 
-![alt text](./images/Screenshot2.png) ![alt text](./images/Screenshot_2015-10-13-16-08-20.png)
+
+
+![alt text](./images/Desktopscreenshot.png) ![alt text]
+
+
 
 ##### Rules
 
@@ -23,7 +26,11 @@ This game involves a user travelling across a grid from the north-western most c
 - A hint, that reveals the correct path for a fractionof a second, is available to the user at the cost of a life. 
 - If the user only has one life remaining, the hint option is disabled.
 
-![alt text](./images/Screenshot3.png)
+
+
+![alt text](./images/Desktopscreenshot2.png)
+
+
 
 ##### How it works
 
@@ -52,3 +59,6 @@ I am pleased with the solution I came up with as the it is clean, simple and app
 
 Away from the javascript, another challenge was making the game mobile friendly. A number of layout iterations were tested until designs that worked well on desktop and mobile browsers were found. Media queries were used to achieve the desired responsiveness.
 
+
+
+![alt text](./images/Mobilescreenshot.png)
