@@ -10,7 +10,7 @@ This game involves a user travelling across a grid from the north-western most c
 
 
 
-![alt text](./images/Desktopscreenshot.png) ![alt text]
+![alt text](./images/Desktopscreenshot.png)
 
 
 
@@ -45,6 +45,15 @@ After each move, the user move array is compared to the random path array. If th
 - HTML5, CSS, Javascript and the jQuery library were used to create this game.
 - Animations were created using the Animate.css stylesheet.
 - The Google Web Fonts 'Lato' and 'Raleway' were used in the styling of the game.
+
+#### Approach
+
+1. After the initial idea was concieved and developed using a sketchbook and notations, the first step was to create the random path generating algorithm. This was key as the whole concept of the game relied upon it. 
+At first a tree structure approach to the problem was taken, with N,E,S and W moves possible. Without a weighting applied to any of these directions, an overall direction to the path could not be achieved. As squares could also be revisited, the path did not have a definite length. It was decided to add the boundary conditions that previously used squares could not be revisted. As there was still no direction weighting, this led to a number of closed loops within the grid. To solve these problems the possible moves were restricted to E and S only. Modelling the grid as an array, these conditions allowed an algorithm to be constructed that generated multiple unique paths across square grids of any size.
+2. HTML and basic styling created were written alongside further basic functionality in javascript using the jQuery library.
+3. Reset and hint functions were added before a first iteration of CSS styling was completed. The design was planned once again using sketches and notations.
+4. Use of the arrow keys was added as functionality to aid play on the desktop. Clicks would be re-added alongside this later so that the game could be played on mobile devices.
+5. A responsive design was planned and sketched and developd through multiple iterations and testing using Chrome's simulator.
 
 #### Main challlenges
 
