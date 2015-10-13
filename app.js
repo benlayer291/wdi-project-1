@@ -64,10 +64,6 @@ function generateRandomPath(width) {
   return randomPath; 
 }
 
-//Need to write up function to set up the grid on the screen
-//The grid should load dynamically when difficulty level button is pressed
-//Grid should always be of the same total size but contain varying number of grid squares.
-
 //Need to put grid square the user chooses into an array
 //This array can be compared with the randomPath array to see if a correct square
 //has been chosen
@@ -79,10 +75,11 @@ var userScore = 0;
 
 function setUp() {
   $('.chooseLevel').on("click", generateGridAndPath);
-  $('#reset').on("click", reset); 
-  $('#hint').on("click", getHint);
   $('#level-button').on('click',menuToggle);
-  $('#instruction-button').on('click',menuToggle);  
+  $('.chooseLevel').on('click',menuToggle);
+  $('#instruction-button').on('click',menuToggle);
+  $('#reset').on("click", reset); 
+  $('#hint').on("click", getHint);  
 }
 
 // Need to compare user move to random path array to see if move is correct
@@ -113,35 +110,32 @@ function playGame() {
   }
 }
 
-
-
 function checkWin() {
   if (userMoves[userMoves.length-1] === randomPath[userMoves.length-1] && userMoves[userMoves.length-1] === grid[width-1][width-1]) {
 
     $('.cursor'+width).addClass('correct-square');
     $('#'+userMoves[userMoves.length-2]).addClass('correct-square');
-    setTimeout(function() {
-      $('#'+userMoves[userMoves.length-1]).addClass('correct-square');
-    },200);
+      setTimeout(function() {
+        $('#'+userMoves[userMoves.length-1]).addClass('correct-square');
+      },200);
 
     userScore++;
 
     $('#score').text("Score: " + userScore);
     $('#score').addClass("correct");
-    setTimeout(function() {
-      $('#score').removeClass("correct");
-    },1000);
+      setTimeout(function() {
+        $('#score').removeClass("correct");
+      },1000);
 
     if (userLives < 10 && userScore % 3 === 0) {
       userLives++;
 
-      $('#lives').text("Lives: " + userLives);
+      // $('#lives').text("Lives: " + userLives);
       $('#lives').addClass("correct");
       setTimeout(function() {
         $('#lives').removeClass("correct");
       },1000);
     }
-
     setTimeout(resetGrid, 1000);
 
     generateRandomPath(width);
@@ -156,26 +150,23 @@ function checkWin() {
     $('.cursor'+width).addClass('incorrect-square');
     $('.cursor'+width).addClass('animated shake');
 
-    $('#lives').text("Lives: " + userLives);
+    // $('#lives').text("Lives: " + userLives);
     $('#lives').addClass("incorrect");
-    setTimeout(function() {
-      $('.cursor'+width).addClass('animated shake');
-      $('#lives').removeClass("incorrect");
-    },500);
+      setTimeout(function() {
+        $('.cursor'+width).addClass('animated shake');
+        $('#lives').removeClass("incorrect");
+      },500);
 
     if (userLives === 0) {
-
       for (var i=0; i <grid.length; i++) {
         for(var j=0; j<grid.length; j++) {
         $('#'+grid[i][j]).addClass('incorrect-square');
         }
       }
-
-      setTimeout(reset, 2000);
-      return generateRandomPath(width);
-
+    setTimeout(reset, 2000);
+    
+    return generateRandomPath(width);
     }
-
     setTimeout(resetGrid, 500);
   }
   $('#lives').text("Lives: " + userLives);
@@ -191,7 +182,6 @@ function resetGrid() {
   $('.gridsquare'+width).removeClass('incorrect-square');
   $('#0').html('<div class="cursor'+width+'"></div>');
   $('.cursor'+width).addClass('animated infinite pulse')
-  $('.gridsquare'+width).css('background','#D8DBE2;');
 }
 
 //Need a function to reset lives
@@ -220,19 +210,19 @@ function reset() {
 //Need a function that displays the path, a "hint" when user is stuck
 
 function getHint() {
+
   if (userLives === 1) {
     $('.message').text("Not enough lives");
-  return setTimeout(function() {
-          $('.message').text("");
-        },500)
+  return setTimeout(function() {$('.message').text("");},500)
   }
+
   userLives--;
   $('#lives').text("Lives: " + userLives);
   
   for (var i=0; i<randomPath.length; i++) {
   $('#'+randomPath[i]).addClass('correct-square');
   setTimeout(resetGrid, 500);
- }
+  }
 }
 
 //Need to be able to dynamically create grids of different sizes on the page
@@ -245,8 +235,10 @@ function generateGridAndPath() {
     var $gridsquare = $('<li></li>').addClass("gridsquare"+width);
     $('.grid').append($gridsquare.attr("id", i));
   }
+
   $('#0').html('<div class="cursor'+width+'"></div>');
   $('.cursor'+width).addClass('animated infinite pulse');
+
   generateGrid(width);
   generateRandomPath(width);
 }
