@@ -92,20 +92,30 @@ function setUp() {
 
 // Need to compare user move to random path array to see if move is correct
 
-function playGame() {
-  var keypressed = event.which;
+var gridPositionsi = [0];
+var gridPositionsj = [0];
 
-  if (id < (Math.pow(width,2)-1) && keypressed === 39) {
-    id+= 1;
+function playGame() {
+  var keypressed    = event.which;
+  var gridPositioni = gridPositionsi[gridPositionsi.length-1];
+  var gridPositionj = gridPositionsj[gridPositionsj.length-1];
+
+  if (id < (Math.pow(width,2)-1) && gridPositionsj[gridPositionsj.length-1] !== width-1&& keypressed === 39) {
+    id++;
+    gridPositionj++;
     userMoves.push(id);
+    gridPositionsj.push(gridPositionj);
     $('.cursor'+width).animate({left: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
 
-  } else if (id < (Math.pow(width,2)-1) && keypressed === 40) {
+  } else if (id < (Math.pow(width,2)-1) && gridPositionsi[gridPositionsi.length-1] !== width-1 && keypressed === 40) {
     id+= width;
+    gridPositioni++;
     userMoves.push(id);
+    gridPositionsi.push(gridPositioni);
     $('.cursor'+width).animate({top: "+="+((gridwidth/width))+"px"}, 100, 'swing');
     checkWin();
+    
   }
 }
 
@@ -173,16 +183,16 @@ function checkWin() {
         $('#lives').removeClass("incorrect");
       },500);
 
-    if (userLives === 0) {
-      for (var i=0; i <grid.length; i++) {
-        for(var j=0; j<grid.length; j++) {
-        $('#'+grid[i][j]).addClass('incorrect-square');
+      if (userLives === 0) {
+        for (var i=0; i <grid.length; i++) {
+          for(var j=0; j<grid.length; j++) {
+          $('#'+grid[i][j]).addClass('incorrect-square');
+          }
         }
+      setTimeout(reset, 2000);
+      
+      return generateRandomPath(width);
       }
-    setTimeout(reset, 2000);
-    
-    return generateRandomPath(width);
-    }
     setTimeout(resetGrid, 500);
   }
   $('#lives').text("Lives: " + userLives);
@@ -191,6 +201,8 @@ function checkWin() {
 //Need a function to reset the grid
 
 function resetGrid() {
+  gridPositionsi = [0];
+  gridPositionsj = [0];
   userMoves = [0];
   id        =0;
   $('.gridsquare'+width).removeClass('cursor'+width);
