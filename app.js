@@ -172,7 +172,7 @@ function checkWin() {
 
   } else {
     userLives--;
-
+    $('#lives').text("Lives: " + userLives);
     $('.cursor'+width).addClass('incorrect-square');
     $('.cursor'+width).addClass('animated shake');
 
